@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Events</title>
+    <link rel="shortcut icon" href="./assets/img/favicon/favicon-16x16.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+</head>
+
+<body class="bg-primary-subtle ">
+    <!--encabezado-->
+    <div class="container d-flex justify-content-between bg-light">
+       
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+             <!--logo-->
+             <button class="navbar-toggler navbar-toggler-right navbar-toggler-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <a class="navbar-brand" href="./index.html ">
+                    <img src="./assets/img/logo/Logo Amazing Events.png" alt="Logo" width="100" height="auto"
+                        class="d-inline-block align-text-top">
+                </a>
+
+             <!--menu navecación-->
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="navbar-nav text-right">
+                    <a class="nav-link m-2 active button shadow p-3" href="./index.html">Home</a>
+                    <a class="nav-link m-2 active button shadow p-3" href="./upcomingEvents.html">Upcoming Events</a>
+                    <a class="nav-link m-2 active button shadow p-3" href="./pastEvents.html">Past Events</a>
+                    <a class="nav-link m-2 active button shadow p-3" href="./contact.html">Contact</a>
+                    <a class="nav-link m-2 active button shadow p-3" href="./stats.html">Stats</a>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+    <main>
+ <!--carrusel paginas-->
+
+ <div class="container">
+    <div clas="pager navigation">
+    <ul class="pagination d-flex justify-content-between">
+        <li class="pagination-item previous"><a href="./index.html" class="text-decoration-none fs-1 fw-bold text-white">&lt;</a></li>
+        <li><p class="fs-1 fw-bold text-white">Past Events</p></li>
+        <li class="pagination-item next"><a href="./pastEvents.html" class="text-decoration-none fs-1 fw-bold text-white">&gt;</a></li>
+      </ul>
+    </div>
+</div>
+         <!--menu-->
+
+         <div class="container bg-light p-5 text-center">
+        
+            <!--botones-->
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                <label class="form-check-label" for="flexCheckDefault">
+                    Category
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                    Category
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                    Category
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                    Category
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                    Category
+                </label>
+            </div>
+            <!--search-->
+            <div class="form-check form-check-inline d-flex flex-direction-column mt-3">
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-text">Go</span>
+            </div>
+        
+        </div>
+        <br>    
+<!--cards-->
+<div class="container d-flex justify-content-between bg-light">
+    <div class="card-group p-3">
+        <div class="card">
+            <div class="card-img">
+                <img src="./assets/img/Museum_Tour.jpg" class="card-img-fluid" alt="100%">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Museum Tour</h5>
+                <p class="card-text">Description:</p>
+
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <p class="card-text">Price:</p>
+                <a href="./details.html" class="btn btn-primary">See more</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="./assets/img/Costume_Party.jpg" class="card-img-fluid" alt="100%">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Costume Party</h5>
+                <p class="card-text">Description:</p>
+
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <p class="card-text">Price:</p>
+                <a href="./details.html" class="btn btn-primary">See more</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="./assets/img/Food_Fair.jpg" class="card-img-fluid" alt="100%">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Food Fair</h5>
+                <p class="card-text">Description:</p>
+
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <p class="card-text">Price:</p>
+                <a href="./details.html" class="btn btn-primary">See more</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="./assets/img/Marathon.jpg" class="card-img-fluid" alt="100%">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Marathon</h5>
+                <p class="card-text">Description:</p>
+
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <p class="card-text">Price:</p>
+                <a href="./details.html" class="btn btn-primary">See more</a>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+<br>
+    <!--footer-->
+    <div class="container bg-light p-3">
+        <div class="footer d-flex m-3 justify-content-between">
+            <!--redes-->
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/redes/instagram_logo_icon_186929.png" alt="Logo" width="30" height="24"
+                        class="d-inline-block align-text-top">
+                </a>
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/redes/social_facebook_fb_35.png" alt="Logo" width="30" height="24"
+                        class="d-inline-block align-text-top">
+                </a>
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/redes/whatsapp-logo_icon-icons.com_57054.png" alt="Logo" width="30" height="24"
+                        class="d-inline-block align-text-top">
+                </a>
+            </div>
+            <!--titulo-->
+            <h3 class="text-end fs-1 fw-bold">Cohort</h3>
+        </div>
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
