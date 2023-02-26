@@ -2,196 +2,91 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazing Events</title>
-    <link rel="shortcut icon" href="./assets/img/favicon/favicon-16x16.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/styles/main.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazing Events</title>
+  <link rel="shortcut icon" href="./assets/img/favicon/favicon-16x16.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles/main.css">
 </head>
 
 <body class="bg-primary-subtle ">
-    <!--encabezado-->
-    <div class="container d-flex justify-content-between bg-light">
-       
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-           <!--logo-->
-           <button class="navbar-toggler navbar-toggler-right navbar-toggler-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-              <a class="navbar-brand" href="./index.html ">
-                  <img src="./assets/img/logo/Logo Amazing Events.png" alt="Logo" width="100" height="auto"
-                      class="d-inline-block align-text-top">
-              </a>
-
-           <!--menu navecación-->
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-              <div class="navbar-nav text-right">
-                  <a class="nav-link m-2 active button shadow p-3" href="./index.html">Home</a>
-                  <a class="nav-link m-2 active button shadow p-3" href="./upcomingEvents.html">Upcoming Events</a>
-                  <a class="nav-link m-2 active button shadow p-3" href="./pastEvents.html">Past Events</a>
-                  <a class="nav-link m-2 active button shadow p-3" href="./contact.html">Contact</a>
-                  <a class="nav-link m-2 active button shadow p-3" href="./stats.html">Stats</a>
-              </div>
-          </div>
-      </nav>
-
-  </div>
+  <!--encabezado-->
+  <header class="bg-light mx-4 ">
+    <nav class="navbar navbar-expand-lg d-flex flex-nowrap">
+      <div class="container-fluid">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html">
+            <img src="./assets/img/logo/Logo.png" alt="AmazingEvents" />
+          </a>
+        </div>
+        <button class="navbar-toggler m-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end w-75" id="navbarTogglerDemo01">
+          <ul class="navbar-nav mb-2 mb-lg-0 text-dark fw-bold">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./upcomingEvents.html">Upcoming Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pastEvents.html">Past Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./stats.html">Stats</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
   <br>
   <!--cards-->
-    <main>
-        <div class="container p-5 d-flex flex-column align-items-center bg-light">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                  <div class="col-md-8">
-                    <img src="./assets/img/Cinema.jpg" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-4">
-                    <div class="card-body">
-                      <h5 class="card-title">Cinema</h5>
-                      <p class="card-text">Name: </p>
-                      <p class="card-text">Description: </p>
-                      <p class="card-text">Category: </p>
-                      <p class="card-text">Place: </p>
-                      <p class="card-text">Assistance or estimate: </p>
-                      <p class="card-text">Price: </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div><br>
-        <div class="container p-5 d-flex flex-column align-items-center bg-light">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                  <div class="col-md-6">
-                    <img src="./assets/img/Costume_Party.jpg" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-body">
-                      <h5 class="card-title">Costum Party</h5>
-                      <p class="card-text">Name: </p>
-                      <p class="card-text">Description: </p>
-                      <p class="card-text">Category: </p>
-                      <p class="card-text">Place: </p>
-                      <p class="card-text">Assistance or estimate: </p>
-                      <p class="card-text">Price: </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div><br>
-        <div class="container p-5 d-flex flex-column align-items-center bg-light">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                  <div class="col-md-6">
-                    <img src="./assets/img/Food_Fair.jpg" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-body">
-                      <h5 class="card-title">Food Fair</h5>
-                      <p class="card-text">Name: </p>
-                      <p class="card-text">Description: </p>
-                      <p class="card-text">Category: </p>
-                      <p class="card-text">Place: </p>
-                      <p class="card-text">Assistance or estimate: </p>
-                      <p class="card-text">Price: </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div><br>
-        <div class="container p-5 d-flex flex-column align-items-center bg-light">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                  <div class="col-md-6">
-                    <img src="./assets/img/Marathon.jpg" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-body">
-                      <h5 class="card-title">Marathon</h5>
-                      <p class="card-text">Name: </p>
-                      <p class="card-text">Description: </p>
-                      <p class="card-text">Category: </p>
-                      <p class="card-text">Place: </p>
-                      <p class="card-text">Assistance or estimate: </p>
-                      <p class="card-text">Price: </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div><br>
-        <div class="container p-5 d-flex flex-column align-items-center bg-light">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                  <div class="col-md-6">
-                    <img src="./assets/img/Museum_Tour.jpg" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-body">
-                      <h5 class="card-title">Museum Tour</h5>
-                      <p class="card-text">Name: </p>
-                      <p class="card-text">Description: </p>
-                      <p class="card-text">Category: </p>
-                      <p class="card-text">Place: </p>
-                      <p class="card-text">Assistance or estimate: </p>
-                      <p class="card-text">Price: </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div><br>
-        <div class="container p-5 d-flex flex-column align-items-center bg-light">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                  <div class="col-md-6">
-                    <img src="./assets/img/Music_Concert.jpg" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-body">
-                      <h5 class="card-title">Music Concert</h5>
-                      <p class="card-text">Name: </p>
-                      <p class="card-text">Description: </p>
-                      <p class="card-text">Category: </p>
-                      <p class="card-text">Place: </p>
-                      <p class="card-text">Assistance or estimate: </p>
-                      <p class="card-text">Price: </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
-    </main>
-    <br>
-     <!--footer-->
-     <div class="container bg-light p-3">
-      <div class="footer d-flex m-3 justify-content-between">
-          <!--redes-->
-          <div class="container">
-              <a class="navbar-brand" href="#">
-                  <img src="./assets/img/redes/instagram_logo_icon_186929.png" alt="Logo" width="30" height="24"
-                      class="d-inline-block align-text-top">
-              </a>
-              <a class="navbar-brand" href="#">
-                  <img src="./assets/img/redes/social_facebook_fb_35.png" alt="Logo" width="30" height="24"
-                      class="d-inline-block align-text-top">
-              </a>
-              <a class="navbar-brand" href="#">
-                  <img src="./assets/img/redes/whatsapp-logo_icon-icons.com_57054.png" alt="Logo" width="30" height="24"
-                      class="d-inline-block align-text-top">
-              </a>
-          </div>
-          <!--titulo-->
-          <h3 class="text-end fs-1 fw-bold">Cohort</h3>
+  <main>
+    <div id="details">
+
+    </div>
+  </main>
+  <br>
+  <!--footer-->
+  <footer class="bg-light p-3 mx-4">
+    <div class="footer d-flex m-3 justify-content-between align-items-center">
+      <!--redes-->
+      <div class="container">
+        <a href="#">
+          <img src="./assets/img/redes/instagram_logo_icon_186929.png" alt="instagram" width="30"
+            class="d-inline-block align-text-top">
+        </a>
+        <a href="#">
+          <img src="./assets/img/redes/social_facebook_fb_35.png" alt="facebook" width="30"
+            class="d-inline-block align-text-top">
+        </a>
+        <a href="#">
+          <img src="./assets/img/redes/whatsapp-logo_icon-icons.com_57054.png" alt="whatsapp" width="30"
+            class="d-inline-block align-text-top">
+        </a>
       </div>
-  </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+      <!--titulo-->
+      <h3 class="text-end fs-1 fw-bold">Cohort</h3>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+crossorigin="anonymous"></script>
+<script src="./assets/scripts/data.js"></script>
+<script src="./assets/scripts/details.js"></script>
 </body>
+
 
 </html>
