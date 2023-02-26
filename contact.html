@@ -17,127 +17,150 @@
 
 <body class="bg-primary-subtle ">
     <!--encabezado-->
-    <div class="container d-flex justify-content-between bg-light">
-       
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-             <!--logo-->
-             <button class="navbar-toggler navbar-toggler-right navbar-toggler-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <a class="navbar-brand" href="./index.html ">
-                    <img src="./assets/img/logo/Logo Amazing Events.png" alt="Logo" width="100" height="auto"
-                        class="d-inline-block align-text-top">
-                </a>
-
-             <!--menu navecación-->
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <div class="navbar-nav text-right">
-                    <a class="nav-link m-2 active button shadow p-3" href="./index.html">Home</a>
-                    <a class="nav-link m-2 active button shadow p-3" href="./upcomingEvents.html">Upcoming Events</a>
-                    <a class="nav-link m-2 active button shadow p-3" href="./pastEvents.html">Past Events</a>
-                    <a class="nav-link m-2 active button shadow p-3" href="./contact.html">Contact</a>
-                    <a class="nav-link m-2 active button shadow p-3" href="./stats.html">Stats</a>
+    <header class="bg-light mx-4 ">
+        <nav class="navbar navbar-expand-lg d-flex flex-nowrap">
+            <div class="container-fluid">
+                <div class="container">
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="./assets/img/logo/Logo.png" alt="AmazingEvents" />
+                    </a>
+                </div>
+                <button class="navbar-toggler m-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end w-75" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav mb-2 mb-lg-0 text-dark fw-bold">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./upcomingEvents.html">Upcoming Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pastEvents.html">Past Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./stats.html">Stats</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
-
-    </div>
-    <main>
- <!--carrusel paginas-->
-        <div class="container">
-            <div clas="pager navigation">
+    </header>
+    <!--carrusel paginas-->
+    <nav class="container">
+        <div class="pager navigation">
             <ul class="pagination d-flex justify-content-between">
-                <li class="pagination-item previous"><a href="./pastEvents.html" class="text-decoration-none fs-1 fw-bold text-white">&lt;</a></li>
-                <li><p class="fs-1 fw-bold text-white">Stats</p></li>
-                <li class="pagination-item next"><a href="./stats.html" class="text-decoration-none fs-1 fw-bold text-white">&gt;</a></li>
-              </ul>
-            </div>
+                <li class="pagination-item previous"><a href="./pastEvents.html"
+                        class="text-decoration-none fs-1 fw-bold text-white">&lt;</a></li>
+                <li>
+                    <p class="fs-1 fw-bold text-white">Stats</p>
+                </li>
+                <li class="pagination-item next"><a href="./stats.html"
+                        class="text-decoration-none fs-1 fw-bold text-white">&gt;</a></li>
+            </ul>
         </div>
-        <!--menu-->
+    </nav>
 
-        <div class="container bg-light p-5 text-center">
-        
-            <!--botones-->
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                <label class="form-check-label" for="flexCheckDefault">
-                    Category
-                </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                <label class="form-check-label" for="flexCheckChecked">
-                    Category
-                </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                <label class="form-check-label" for="flexCheckChecked">
-                    Category
-                </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                <label class="form-check-label" for="flexCheckChecked">
-                    Category
-                </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                <label class="form-check-label" for="flexCheckChecked">
-                    Category
-                </label>
-            </div>
-            <!--search-->
-            <div class="form-check form-check-inline d-flex flex-direction-column mt-3">
-                <input type="text" class="form-control" placeholder="Search">
-                <span class="input-group-text">Go</span>
-            </div>
-        
+
+    <!--menu-->
+
+    <nav class="bg-light p-5 text-center mx-4 ">
+
+        <!--botones-->
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="" id="food" checked>
+            <label class="form-check-label" for="food">
+                Food
+            </label>
         </div>
-        <br>
-<div class="container bg-body-tertiary">
-    <form class="p-3">
-        <fieldset>
-          <legend>Contact As</legend>
-          
-          <div class="mb-3">
-            <label for="TextInput" class="form-label">Name</label>
-            <input type="text" id="disabledTextInput" class="form-control">
-          </div>
-          <div class="mb-3">
-            <label for="InputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </fieldset>
-      </form>
-</div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="" id="museum">
+            <label class="form-check-label" for="museum">
+                Museum
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="" id="music">
+            <label class="form-check-label" for="music">
+                Music
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="" id="book">
+            <label class="form-check-label" for="book">
+                Book
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="" id="cinema">
+            <label class="form-check-label" for="cinema">
+                Cinema
+            </label>
+        </div>
+        <!--search-->
+        <div class="form-check form-check-inline d-flex flex-direction-column mt-3">
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-text">Go</span>
+        </div>
+
+    </nav>
+    <br>
+    <main>
+
+
+        <section class="bg-body-tertiary mx-4">
+            <form class="p-3">
+                <fieldset>
+                    <legend>Contact As</legend>
+
+                    <div class="mb-3">
+                        <label for="TextInput" class="form-label">Name</label>
+                        <input type="text" id="TextInput" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputText" class="form-label">Message</label>
+                        <input type="Text" class="form-control" id="InputText" aria-describedby="Text">
+                        <div id="Text" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </fieldset>
+            </form>
+        </section>
     </main>
     <br>
     <!--footer-->
-    <div class="container bg-light p-3">
-        <div class="footer d-flex m-3 justify-content-between">
+    <footer class="bg-light p-3 mx-4">
+        <div class="footer d-flex m-3 justify-content-between align-items-center">
             <!--redes-->
             <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="./assets/img/redes/instagram_logo_icon_186929.png" alt="instagram" width="30" height="auto"
+                <a href="#">
+                    <img src="./assets/img/redes/instagram_logo_icon_186929.png" alt="instagram" width="30"
                         class="d-inline-block align-text-top">
                 </a>
-                <a class="navbar-brand" href="#">
-                    <img src="./assets/img/redes/social_facebook_fb_35.png" alt="facebook" width="30" height="auto"
+                <a href="#">
+                    <img src="./assets/img/redes/social_facebook_fb_35.png" alt="facebook" width="30"
                         class="d-inline-block align-text-top">
                 </a>
-                <a class="navbar-brand" href="#">
-                    <img src="./assets/img/redes/whatsapp-logo_icon-icons.com_57054.png" alt="whatsapp" width="30" height="auto"
+                <a href="#">
+                    <img src="./assets/img/redes/whatsapp-logo_icon-icons.com_57054.png" alt="whatsapp" width="30"
                         class="d-inline-block align-text-top">
                 </a>
             </div>
             <!--titulo-->
             <h3 class="text-end fs-1 fw-bold">Cohort</h3>
         </div>
-    </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

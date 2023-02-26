@@ -4,3 +4,9 @@ body{
     background-size: cover;
 
 }
+.navbar-brand > img {
+    width: 15vw;
+  }
+  .d-inline-block{
+    width:5vw;
+  }
