@@ -2,7 +2,7 @@ const currentDate = data.currentDate;
 const upcomingEvents = [];
 const pastEvents = [];
 
-// GENERATE LISTS OF UPCOMING AND PAST EVENTS
+// Generar lista de tipo de eventos
 for (const event of data.events) {
   if (event.date >= currentDate) {
     upcomingEvents.push(event);
@@ -11,7 +11,7 @@ for (const event of data.events) {
   }
 }
 
-// GENERATE LISTS SORTED BY ATTENDANCE AND CAPACITY
+// GENERATE lista ordenadas por asistencia y capacitdad
 const eventsSortedByAttendanceDesc = data.events
   .map(event => ({
     name: event.name,
@@ -23,7 +23,7 @@ const eventsSortedByAttendanceDesc = data.events
 const eventsSortedByAttendanceAsc = eventsSortedByAttendanceDesc.slice().reverse();
 const eventsSortedByCapacityDesc = eventsSortedByAttendanceDesc.slice().sort((a, b) => b.capacity - a.capacity);
 
-// DISPLAY TABLE OF EVENTS SORTED BY CAPACITY
+// Mostrar tabla de eventos ordenados por capacitad
 const staticCapacityTable = document.querySelector('#staticCapacity');
 staticCapacityTable.innerHTML = createTable(eventsSortedByAttendanceDesc, eventsSortedByAttendanceAsc, eventsSortedByCapacityDesc);
 
@@ -39,7 +39,7 @@ function createTable(eventsSortedByAttendanceDesc, eventsSortedByAttendanceAsc, 
   return table;
 }
 
-// DISPLAY TABLE OF PAST EVENTS
+// Mostrar tabla de eventos pasados
 const staticPastEventsTable = document.querySelector('#staticPastEvents');
 staticPastEventsTable.innerHTML = createPastEventsTable(pastEvents);
 
@@ -57,7 +57,7 @@ function createPastEventsTable(pastEvents) {
   return table;
 }
 
-// DISPLAY TABLE OF UPCOMING EVENTS
+// Mostrar tabla de eventos futuros
 const staticUpcomingEventsTable = document.querySelector('#staticUpcomingEvents');
 staticUpcomingEventsTable.innerHTML = createUpcomingEventsTable(upcomingEvents);
 
