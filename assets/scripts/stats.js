@@ -1,72 +1,76 @@
-//VALOR DATE DE BASE DE DATOS
-let time = data.currentDate;
+const currentDate = data.currentDate;
+const upcomingEvents = [];
+const pastEvents = [];
 
-var eventUpcoming = [];
-var eventPast = [];
-
-//GENERAR BASE DE EVENTOS PASADOS O FUTUROS
+// GENERATE LISTS OF UPCOMING AND PAST EVENTS
 for (const event of data.events) {
-  if (event.date >= time) {
-    eventUpcoming.push(event);
+  if (event.date >= currentDate) {
+    upcomingEvents.push(event);
   } else {
-    eventPast.push(event);
+    pastEvents.push(event);
   }
 }
 
-//ESTADISTICAS DE EVENTOS PASADOS
-const contenedorTablaPast = document.querySelector("#staticPastEvents");
+// GENERATE LISTS SORTED BY ATTENDANCE AND CAPACITY
+const eventsSortedByAttendanceDesc = data.events
+  .map(event => ({
+    name: event.name,
+    attendance: event.assistance === undefined ? event.estimate * 100 / event.capacity : event.assistance * 100 / event.capacity,
+    capacity: event.capacity
+  }))
+  .sort((a, b) => b.attendance - a.attendance);
 
-let tablaGeneradaPast = crearTablaPast(eventPast);
+const eventsSortedByAttendanceAsc = eventsSortedByAttendanceDesc.slice().reverse();
+const eventsSortedByCapacityDesc = eventsSortedByAttendanceDesc.slice().sort((a, b) => b.capacity - a.capacity);
 
-contenedorTablaPast.innerHTML = tablaGeneradaPast;
+// DISPLAY TABLE OF EVENTS SORTED BY CAPACITY
+const staticCapacityTable = document.querySelector('#staticCapacity');
+staticCapacityTable.innerHTML = createTable(eventsSortedByAttendanceDesc, eventsSortedByAttendanceAsc, eventsSortedByCapacityDesc);
 
-function crearTablaPast(arrayDatosTablaPast) {
-  let tablaPast = "";
-  for (const eventPast of arrayDatosTablaPast) {
-    if (eventPast.assistance == undefined) {
-      tablaPast += `<tr>
-    <td>${eventPast.category}</td>
-    <td>$${eval(eventPast.price * eventPast.estimate)}</td>
-    <td>${Math.round(
-      (eval(eventPast.estimate) * 100) / eval(eventPast.capacity)
-    )}%</td></tr>`;
-    } else if (eventPast.estimate == undefined) {
-      tablaPast += `<tr>
-    <td>${eventPast.category}</td>
-    <td>$${eval(eventPast.price * eventPast.assistance)}</td>
-    <td>${Math.round(
-      (eval(eventPast.assistance) * 100) / eval(eventPast.capacity)
-    )}%</td></tr>`;
-    }
+function createTable(eventsSortedByAttendanceDesc, eventsSortedByAttendanceAsc, eventsSortedByCapacityDesc) {
+  let table = '';
+  for (const [index, event] of eventsSortedByAttendanceDesc.entries()) {
+    table += `<tr>
+      <td>${event.name}, ${event.attendance.toFixed(2)}</td>
+      <td>${eventsSortedByAttendanceAsc[index].name}, ${eventsSortedByAttendanceAsc[index].attendance.toFixed(2)}</td>
+      <td>${eventsSortedByCapacityDesc[index].name}, ${eventsSortedByCapacityDesc[index].capacity}</td>
+    </tr>`;
   }
-  return tablaPast;
-}
-//ESTADISTICAS DE EVENTOS A FUTURO
-const contenedorTablaUpcoming = document.querySelector("#staticUpcomingEvents");
-
-let tablaGeneradaUpcoming = crearTablaUpcoming(eventUpcoming);
-
-contenedorTablaUpcoming.innerHTML = tablaGeneradaUpcoming;
-
-function crearTablaUpcoming(arrayDatosTablaUpcoming) {
-  let tablaUpcoming = "";
-  for (const eventUpcoming of arrayDatosTablaUpcoming) {
-    if (eventUpcoming.assistance == undefined) {
-      tablaUpcoming += `<tr>
-    <td>${eventUpcoming.category}</td>
-    <td>$${eval(eventUpcoming.price * eventUpcoming.estimate)}</td>
-    <td>${Math.round(
-      (eval(eventUpcoming.estimate) * 100) / eval(eventUpcoming.capacity)
-    )}%</td></tr>`;
-    } else if (eventUpcoming.estimate == undefined) {
-      tablaUpcoming += `<tr>
-      <td>${eventUpcoming.category}</td>
-      <td>$${eval(eventUpcoming.price * eventUpcoming.assistance)}</td>
-      <td>${Math.round(
-        (eval(eventUpcoming.assistance) * 100) / eval(eventUpcoming.capacity)
-      )}%</td></tr>`;
-    }
-  }
-  return tablaUpcoming;
+  return table;
 }
 
+// DISPLAY TABLE OF PAST EVENTS
+const staticPastEventsTable = document.querySelector('#staticPastEvents');
+staticPastEventsTable.innerHTML = createPastEventsTable(pastEvents);
+
+function createPastEventsTable(pastEvents) {
+  let table = '';
+  for (const event of pastEvents) {
+    const revenue = event.assistance === undefined ? event.price * event.estimate : event.price * event.assistance;
+    const attendance = event.assistance === undefined ? event.estimate * 100 / event.capacity : event.assistance * 100 / event.capacity;
+    table += `<tr>
+      <td>${event.category}</td>
+      <td>$${revenue.toFixed(2)}</td>
+      <td>${attendance.toFixed(2)}%</td>
+    </tr>`;
+  }
+  return table;
+}
+
+// DISPLAY TABLE OF UPCOMING EVENTS
+const staticUpcomingEventsTable = document.querySelector('#staticUpcomingEvents');
+staticUpcomingEventsTable.innerHTML = createUpcomingEventsTable(upcomingEvents);
+
+function createUpcomingEventsTable(upcomingEvents) {
+  let table = '';
+  for (const event of upcomingEvents) {
+    const revenue = event.assistance === undefined ? event.price * event.estimate : event.price * event.assistance;
+    const attendance = event.assistance === undefined ? event.estimate * 100 / event.capacity : event.assistance * 100 / event.capacity;
+    table += `<tr>
+      <td>${event.category}</td>
+      <td>$${revenue.toFixed(2)}</td>
+      <td>${attendance.toFixed(2)}%</td>
+    </tr>`;
+  }
+  return table;
+}
