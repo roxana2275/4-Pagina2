@@ -35,9 +35,9 @@ function crearCheckbox(arrayDatos) {
 function crearTarjetas(arrayDatos) {
     let tarjetas = "";
     for (const event of arrayDatos) {
-      tarjetas += `<div class="card m-3">
+      tarjetas += `<div class="card p-1">
       <div class="card-img-top">
-          <img src="${event.image}" width="100%" alt="100%">
+          <img src="${event.image}" >
       </div>
       <div class="card-header ">
           <h5 class="card-title">Name: ${event.name}</h5>
@@ -79,9 +79,9 @@ function filtrarEventos() {
   var tarjetasFiltradas = "";
   data.events.forEach(function (evento) {
     if (categoriasSeleccionadas.indexOf(evento.category) !== -1) {
-      tarjetasFiltradas += `<div class="card m-3">
+      tarjetasFiltradas += `<div class="card">
       <div class="card-img-top">
-          <img src="${evento.image}" width="100%" alt="100%">
+          <img src="${evento.image}" >
       </div>
       <div class="card-header">
           <h5 class="card-title">Name: ${evento.name}</h5>
@@ -126,9 +126,9 @@ document.getElementById("search-button").addEventListener("click", () => {
   // Generar el contenido HTML de las tarjetas filtradas
   let tarjetasFiltradas = "";
   filteredCards.forEach(evento => {
-    tarjetasFiltradas += `<div class="card m-3">
+    tarjetasFiltradas += `<div class="card">
       <div class="card-img-top">
-          <img src="${evento.image}" width="100%" alt="100%">
+          <img src="${evento.image}" >
       </div>
       <div class="card-header">
           <h5 class="card-title">Name: ${evento.name}</h5>
@@ -163,9 +163,9 @@ document.getElementById("search-button").addEventListener("click", () => {
     // Generar el contenido HTML de las tarjetas filtradas
     let tarjetasFiltradasSearch = "";
     filteredCards.forEach(evento => {
-      tarjetasFiltradasSearch += `<div class="card m-3">
+      tarjetasFiltradasSearch += `<div class="card">
         <div class="card-img-top">
-            <img src="${evento.image}" width="100%" alt="100%">
+            <img src="${evento.image}" >
         </div>
         <div class="card-header">
             <h5 class="card-title">Name: ${evento.name}</h5>

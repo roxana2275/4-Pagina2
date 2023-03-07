@@ -41,9 +41,9 @@ function crearTarjetasUpcoming(arrayDatosUpcoming) {
   let tarjetasUpcoming = "";
   for (const eventUpcoming of arrayDatosUpcoming) {
     if(eventUpcoming.date>actualDate){
-        tarjetasUpcoming += `<div class="card m-3">
+        tarjetasUpcoming += `<div class="card">
         <div class="card-img-top">
-            <img src="${eventUpcoming.image}" width="100%" alt="100%">
+            <img src="${eventUpcoming.image}" >
         </div>
         <div class="card-header ">
             <h5 class="card-title">Name: ${eventUpcoming.name}</h5>
@@ -80,9 +80,9 @@ function filtrarEventos() {
     var tarjetasFiltradas = "";
     data.events.forEach(function (evento) {
       if (categoriasSeleccionadas.indexOf(evento.category) !== -1) {
-        tarjetasFiltradas += `<div class="card m-3">
+        tarjetasFiltradas += `<div class="card">
         <div class="card-img-top">
-            <img src="${evento.image}" width="100%" alt="100%">
+            <img src="${evento.image}" >
         </div>
         <div class="card-header ">
             <h5 class="card-title">Name: ${evento.name}</h5>
@@ -125,9 +125,9 @@ function filtrarEventos() {
     // Generar el contenido HTML de las tarjetas filtradas
     let tarjetasFiltradasSearch = "";
     filteredCards.forEach(evento => {
-      tarjetasFiltradasSearch += `<div class="card m-3">
+      tarjetasFiltradasSearch += `<div class="card">
         <div class="card-img-top">
-            <img src="${evento.image}" width="100%" alt="100%">
+            <img src="${evento.image}" >
         </div>
         <div class="card-header">
             <h5 class="card-title">Name: ${evento.name}</h5>
