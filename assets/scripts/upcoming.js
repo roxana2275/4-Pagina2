@@ -1,5 +1,7 @@
 //CARDS DE TARJETAS ACTUALES O FUTURAS
+const actualDate = data.currentDate;
 let opciones = [];
+let eventUpcoming=[];
 
 for (const element of data.events) {
   if (opciones.indexOf(element.category) === -1) {
@@ -7,18 +9,24 @@ for (const element of data.events) {
   }
 }
 
-console.log(opciones);
+// Generar lista de tipo de eventos
+for (const event of data.events) {
+  if (event.date >= actualDate) {
+    eventUpcoming.push(event);
+  }
+}
+
+console.log(eventUpcoming)
+
 const contenedorCheckbox = document.querySelector("#nav-container-checkbox");
 let checkboxGenerados = crearCheckbox(opciones);
 contenedorCheckbox.innerHTML = checkboxGenerados;
 
-console.log(opciones);
 
-const actualDate = data.currentDate;
 
 const contenedorTarjetasUpcoming = document.querySelector("#Upcoming");
 
-let tarjetasGeneradasUpcoming=crearTarjetasUpcoming(data.events);
+let tarjetasGeneradasUpcoming=crearTarjetasUpcoming(eventUpcoming);
 
 contenedorTarjetasUpcoming.innerHTML = tarjetasGeneradasUpcoming;
 
@@ -40,7 +48,7 @@ function crearCheckbox(arrayDatos) {
 function crearTarjetasUpcoming(arrayDatosUpcoming) {
   let tarjetasUpcoming = "";
   for (const eventUpcoming of arrayDatosUpcoming) {
-    if(eventUpcoming.date>actualDate){
+
         tarjetasUpcoming += `<div class="card">
         <div class="card-img-top">
             <img src="${eventUpcoming.image}" >
@@ -57,7 +65,7 @@ function crearTarjetasUpcoming(arrayDatosUpcoming) {
             <input type="button" onclick="seeDetail('${eventUpcoming._id}')" value="See more" class="btn btn-primary">
         </div>
     </div>`
-    }
+
   }
   return tarjetasUpcoming;
   filtrarEventos();
@@ -78,7 +86,7 @@ function filtrarEventos() {
     });
     // Mostrar las tarjetas según las categorías seleccionadas
     var tarjetasFiltradas = "";
-    data.events.forEach(function (evento) {
+    eventUpcoming.forEach(function (evento) {
       if (categoriasSeleccionadas.indexOf(evento.category) !== -1) {
         tarjetasFiltradas += `<div class="card">
         <div class="card-img-top">
@@ -117,7 +125,7 @@ function filtrarEventos() {
     let searchTerm = document.getElementById("search-input").value.toUpperCase();
     
     // Filtrar las tarjetas que contienen el término de búsqueda en el nombre o descripción
-    let filteredCards = data.events.filter(evento =>
+    let filteredCards = eventUpcoming.filter(evento =>
       evento.name.toUpperCase().includes(searchTerm) ||
       evento.description.toUpperCase().includes(searchTerm)
     );
@@ -151,7 +159,7 @@ function filtrarEventos() {
     window.location.href = `./details.html?id=${id}`;
     }
 
-    container.innerHTML = html
+
   
   
   

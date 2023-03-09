@@ -1,14 +1,8 @@
 //Array de tipo de tarjetas para checkbox
 const actualDate = data.currentDate;
 let opciones = [];
-
-
-// generar categorias de checkbox
-for (const element of data.events) {
-  if (opciones.indexOf(element.category) === -1) {
-    opciones.push(element.category);
-  }
-}
+let pastEvents=[];
+let upcomingEvents = [];
 
 
 // variables para Generador de checkbox
@@ -17,11 +11,38 @@ let checkboxGenerados = crearCheckbox(opciones);
 contenedorCheckbox.innerHTML = checkboxGenerados;
 
 
-//Variables para generar tarjetas
+//Variables para generar todas las tarjetas
 const contenedorTarjetas = document.querySelector("#Home");
 let tarjetasGeneradas = crearTarjetas(data.events);
 contenedorTarjetas.innerHTML = tarjetasGeneradas;
 
+//variables para upcoming
+const contenedorTarjetasUpcoming = document.querySelector("#Upcoming");
+let tarjetasGeneradasUpcoming=crearTarjetas(upcomingEvents);
+contenedorTarjetasUpcoming.innerHTML = tarjetasGeneradasUpcoming;
+
+
+//variables para past
+const contenedorTarjetasPast = document.querySelector("#Past");
+let tarjetasGeneradasPast=crearTarjetas(pastEvents);
+contenedorTarjetasPast.innerHTML = tarjetasGeneradasPast;
+
+// generar categorias de checkbox
+for (const element of data.events) {
+    if (opciones.indexOf(element.category) === -1) {
+      opciones.push(element.category);
+    }
+  }
+  
+  // Generar lista de tipo de eventos
+  for (const event of data.events) {
+    if (event.date >= currentDate) {
+      upcomingEvents.push(event);
+    } else {
+      pastEvents.push(event);
+    }
+  }
+  
 
 //Generador de checkbox
 function crearCheckbox(arrayDatos) {
@@ -38,7 +59,7 @@ function crearCheckbox(arrayDatos) {
 
   return checkbox;
 }
-//Generador de todas las tarjetas tarjetas
+//Generador de tarjetas
 function crearTarjetas(arrayDatos) {
     let tarjetas = "";
     for (const event of arrayDatos) {

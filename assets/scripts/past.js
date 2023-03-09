@@ -2,6 +2,8 @@
 
 const actualDate = data.currentDate;
 let opciones = [];
+let eventPast=[];
+
 
 for (const element of data.events) {
   if (opciones.indexOf(element.category) === -1) {
@@ -9,7 +11,16 @@ for (const element of data.events) {
   }
 }
 
-console.log(opciones);
+// Generar lista de tipo de eventos
+for (const event of data.events) {
+  if (event.date < actualDate) {
+    eventPast.push(event);
+  }
+}
+console.log(actualDate)
+console.log(eventPast)
+
+
 const contenedorCheckbox = document.querySelector("#nav-container-checkbox");
 let checkboxGenerados = crearCheckbox(opciones);
 contenedorCheckbox.innerHTML = checkboxGenerados;
@@ -17,7 +28,7 @@ contenedorCheckbox.innerHTML = checkboxGenerados;
 
 const contenedorTarjetasPast = document.querySelector("#Past");
 
-let tarjetasGeneradasPast=crearTarjetasPast(data.events);
+let tarjetasGeneradasPast=crearTarjetasPast(eventPast);
 
 contenedorTarjetasPast.innerHTML = tarjetasGeneradasPast;
 
@@ -39,7 +50,6 @@ function crearCheckbox(arrayDatos) {
 function crearTarjetasPast(arrayDatosPast) {
   let tarjetasPast = "";
   for (const eventPast of arrayDatosPast) {
-    if(eventPast.date<actualDate){
         tarjetasPast += `<div class="card">
         <div class="card-img-top">
             <img src="${eventPast.image}" >
@@ -55,9 +65,7 @@ function crearTarjetasPast(arrayDatosPast) {
             <p class="card-text">Price:${eventPast.price}</p>
             <input type="button" onclick="seeDetail('${eventPast._id}')" value="See more" class="btn btn-primary">
         </div>
-    </div>`
-    }
-    
+    </div>`    
   }
   return tarjetasPast;
   filtrarEventos();
@@ -78,7 +86,7 @@ function filtrarEventos() {
     });
     // Mostrar las tarjetas según las categorías seleccionadas
     var tarjetasFiltradas = "";
-    data.events.forEach(function (evento) {
+    eventPast.forEach(function (evento) {
       if (categoriasSeleccionadas.indexOf(evento.category) !== -1) {
         tarjetasFiltradas += `<div class="card">
         <div class="card-img-top">
@@ -116,7 +124,7 @@ function filtrarEventos() {
     let searchTerm = document.getElementById("search-input").value.toUpperCase();
     
     // Filtrar las tarjetas que contienen el término de búsqueda en el nombre o descripción
-    let filteredCards = data.events.filter(evento =>
+    let filteredCards = eventPast.filter(evento =>
       evento.name.toUpperCase().includes(searchTerm) ||
       evento.description.toUpperCase().includes(searchTerm)
     );
@@ -150,6 +158,6 @@ function filtrarEventos() {
     window.location.href = `./details.html?id=${id}`;
     }
 
-    container.innerHTML = html
+    // container.innerHTML = html
   
   
