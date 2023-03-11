@@ -103,6 +103,9 @@ function filtrarEventos() {
             <input type="button" onclick="seeDetail('${evento._id}')" value="See more" class="btn btn-primary">
         </div>
       </div>`;
+      }else if(categoriasSeleccionadas.length==0){
+        location.reload();
+  
       }
     });
   

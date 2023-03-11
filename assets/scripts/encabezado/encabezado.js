@@ -34,4 +34,4 @@ contenedorEncabezado.innerHTML = `<header class="bg-light mx-4 ">
     </div>
 </nav>
 </header>
-<br>`;
+`;

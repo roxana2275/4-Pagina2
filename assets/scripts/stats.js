@@ -29,12 +29,16 @@ staticCapacityTable.innerHTML = createTable(eventsSortedByAttendanceDesc, events
 
 function createTable(eventsSortedByAttendanceDesc, eventsSortedByAttendanceAsc, eventsSortedByCapacityDesc) {
   let table = '';
+  let contador = 0;
   for (const [index, event] of eventsSortedByAttendanceDesc.entries()) {
-    table += `<tr>
+    if(contador<7){
+      table += `<tr>
       <td>${event.name}, ${event.attendance.toFixed(2)}</td>
       <td>${eventsSortedByAttendanceAsc[index].name}, ${eventsSortedByAttendanceAsc[index].attendance.toFixed(2)}</td>
       <td>${eventsSortedByCapacityDesc[index].name}, ${eventsSortedByCapacityDesc[index].capacity}</td>
     </tr>`;
+    }
+    contador++;
   }
   return table;
 }

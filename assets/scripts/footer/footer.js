@@ -17,4 +17,4 @@ contenedorFooter.innerHTML = `<div class="footer d-flex m-3 justify-content-betw
 </div>
 
 <h3 class="text-end fs-1 fw-bold">Cohort</h3>
-</div>`;
+`;
