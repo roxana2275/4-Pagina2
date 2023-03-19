@@ -1,63 +1,46 @@
-
-// Obtener el ID del evento de la URL
 let urlParams = new URLSearchParams(document.location.search);
-let eventId = urlParams.get('id');
-console.log(eventId)
-//buscar dato
-let profile = data.events.filter(info=>info._id == eventId);
+// Obtener el ID del evento de la URL
+let eventId = urlParams.get("id");
 
-console.log(profile)
+console.log(eventId);
 
-const contenedorEvento = document.getElementById("details")
-let html="";
+fetch("https://mindhub-xj03.onrender.com/api/amazing")
+  .then((response) => response.json())
+  .then((data) => {
+    const profile = data.events.filter((info) => info._id == eventId);
 
-for(let info of profile){
-    if(info.assistance == undefined){
-    html += `<div class="p-5 d-flex flex-column align-items-center bg-light">
-        <div class="card m-4" style="max-width: 540px;">
+    if (profile.length > 0) {
+      const event = profile[0];
+      const contenedorEvento = document.getElementById("details");
+      let html = `
+        <div class="p-5 d-flex flex-column align-items-center bg-light">
+          <div class="card m-4" >
             <div class="row g-0">
               <div class="col-md-4">
-                <img src=${info.image} class="img-fluid rounded-start" alt="...">
+                <img src=${event.image} class="img-fluid rounded-start"  alt="${event.description}">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">Nombre: ${info.name}</h5>
-                  <p class="card-text">Date: ${info.date}</p>
-                  <p class="card-text">Descripcion: ${info.description}</p>
-                  <p class="card-text">Category: ${info.category}</p>
-                  <p class="card-text">Place: ${info.place}</p>
-                  <p class="card-text">Capacity: ${info.capacity}</p>
-                  <p class="card-text">Estimate: ${info.estimate}</p>
-                  <p class="card-text">Price: ${info.price}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-    </div><br>`
-      } else{
+                  <h5 class="card-title">Nombre: ${event.name}</h5>
+                  <p class="card-text">Date: ${event.date}</p>
+                  <p class="card-text">Descripcion: ${event.description}</p>
+                  <p class="card-text">Category: ${event.category}</p>
+                  <p class="card-text">Place: ${event.place}</p>
+                  <p class="card-text">Capacity: ${event.capacity}</p>`;
+      if (event.assistance !== undefined) {
         html += `
-        <div class="m-4 d-flex flex-column align-items-center bg-light">
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src=${info.image} class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Nombre: ${info.name}</h5>
-                  <p class="card-text">Date: ${info.date}</p>
-                  <p class="card-text">Descripcion: ${info.description}</p>
-                  <p class="card-text">Category: ${info.category}</p>
-                  <p class="card-text">Place: ${info.place}</p>
-                  <p class="card-text">Capacity: ${info.capacity}</p>
-                  <p class="card-text">Assistance: ${info.assistance}</p>
-                  <p class="card-text">Price: ${info.price}</p>
+                  <p class="card-text">Assistance: ${event.assistance}</p>`;
+      }
+      html += `
+                  <p class="card-text">Price: ${event.price}</p>
                 </div>
               </div>
             </div>
           </div>
-    </div><br>`}
-
-      };
-
-contenedorEvento.innerHTML = html;
+        </div><br>`;
+      contenedorEvento.innerHTML = html;
+    } else {
+      console.error(`No event found with ID ${eventId}`);
+    }
+  })
+  .catch((error) => console.error(error));  

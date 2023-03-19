@@ -1,3 +1,7 @@
+fetch("https://mindhub-xj03.onrender.com/api/amazing")
+  .then((response) => response.json())
+  .then((data) => {
+
 //CARDS DE TARJETAS ACTUALES O FUTURAS
 const actualDate = data.currentDate;
 let opciones = [];
@@ -51,7 +55,7 @@ function crearTarjetasUpcoming(arrayDatosUpcoming) {
 
         tarjetasUpcoming += `<div class="card">
         <div class="card-img-top">
-            <img src="${eventUpcoming.image}" >
+            <img src="${eventUpcoming.image}" id="img-card" alt="${eventUpcoming.description}">
         </div>
         <div class="card-header ">
             <h5 class="card-title">Name: ${eventUpcoming.name}</h5>
@@ -90,7 +94,7 @@ function filtrarEventos() {
       if (categoriasSeleccionadas.indexOf(evento.category) !== -1) {
         tarjetasFiltradas += `<div class="card">
         <div class="card-img-top">
-            <img src="${evento.image}" >
+            <img src="${evento.image}" id="img-card" alt="${evento.description}">
         </div>
         <div class="card-header ">
             <h5 class="card-title">Name: ${evento.name}</h5>
@@ -138,7 +142,7 @@ function filtrarEventos() {
     filteredCards.forEach(evento => {
       tarjetasFiltradasSearch += `<div class="card">
         <div class="card-img-top">
-            <img src="${evento.image}" >
+            <img src="${evento.image}" id="img-card" alt="${evento.description}">
         </div>
         <div class="card-header">
             <h5 class="card-title">Name: ${evento.name}</h5>
@@ -156,13 +160,8 @@ function filtrarEventos() {
     // Actualizar el contenido del contenedor de tarjetas
     const contenedorTarjetasSearch = document.querySelector("#Upcoming");
     contenedorTarjetasSearch.innerHTML = tarjetasFiltradasSearch;
-  });
-
+  });})  
+  .catch((error) => console.error(error));
   function seeDetail(id){
     window.location.href = `./details.html?id=${id}`;
     }
-
-
-  
-  
-  
