@@ -1,12 +1,59 @@
 body{
     font-family: 'Montserrat', sans-serif !important;
+    
     background-image: url(../../assets/img/background/pxfuel.jpg)!important;
     background-size: cover;
+    
 
 }
 .navbar-brand > img {
     width: 15vw;
-  }
-  .d-inline-block{
+}
+
+.d-inline-block{
     width:5vw;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-container-checkbox {
+    flex: 1;
+}
+
+#search-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#search-input {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 10px;
+}
+
+#img-card{
+  width: 100% !important;
+  height: 15rem !important;
+  
   }
+
+@media (max-width: 768px) {
+    #container {
+      flex-direction: column;
+    }
+}
+
+  
