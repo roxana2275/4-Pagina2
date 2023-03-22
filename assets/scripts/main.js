@@ -4,9 +4,9 @@ let urlApi="https://mindhub-xj03.onrender.com/api/amazing";
 fetch(urlApi)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data)
+    // console.log()
     //Array de tipo de tarjetas para checkbox
-    const actualDate = data.currentDate;
+    //const actualDate = data.currentDate;
     let opciones = [];
 
     // generar categorias de checkbox
@@ -33,7 +33,7 @@ fetch(urlApi)
       let checkbox = "";
 
       for (let i = 0; i < arrayDatos.length; i++) {
-        checkbox += `<div class="form-check form-check-inline">
+        checkbox += `<div class="form-check-inline form-switch fs-4">
         <input class="form-check-input" type="checkbox" value="" id="${opciones[i]}">
         <label class="form-check-label" for="${opciones[i]}">
           ${opciones[i]}
@@ -67,7 +67,7 @@ fetch(urlApi)
           <img  class="img-fluid" src="${evento.image}" id="img-card" alt="${evento.description}>
       </div>
       <div class="card-header">
-          <h5 class="card-title">Name: ${evento.name}</h5>
+          <h5 class="card-title fw-bold">Name: ${evento.name}</h5>
       </div>
       <div class="card-body">
           <p class="card-text">Description: ${evento.description}</p>
@@ -118,7 +118,7 @@ fetch(urlApi)
           <img class="img-fluid" src="${evento.image}" id="img-card" alt="${evento.description}>
       </div>
       <div class="card-header">
-          <h5 class="card-title">Name: ${evento.name}</h5>
+          <h5 class="card-title fw-bold">Name: ${evento.name}</h5>
       </div>
       <div class="card-body">
           <p class="card-text">Description: ${evento.description}</p>
@@ -157,7 +157,7 @@ fetch(urlApi)
             <img class="img-fluid" src="${evento.image}" id="img-card" alt="${evento.description} >
         </div>
         <div class="card-header">
-            <h5 class="card-title">Name: ${evento.name}</h5>
+            <h5 class="card-title fw-bold">Name: ${evento.name}</h5>
         </div>
         <div class="card-body">
             <p class="card-text">Description: ${evento.description}</p>
@@ -192,7 +192,7 @@ fetch(urlApi)
         <img class="img-fluid" src="${event.image}" id="img-card" alt="${event.description}>
     </div>
     <div class="card-header ">
-        <h5 class="card-title">Name: ${event.name}</h5>
+        <h5 class="card-title fw-bold">Name: ${event.name}</h5>
     </div>
     <div class="card-body">
         <p class="card-text">Description: ${event.description}</p>
@@ -210,3 +210,18 @@ fetch(urlApi)
     // Mostrar todas las tarjetas al cargar la página
     filtrarEventos();
   }
+
+  window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("boton-arriba").style.display = "block";
+  } else {
+    document.getElementById("boton-arriba").style.display = "none";
+  }
+}
+
+document.getElementById("boton-arriba").addEventListener("click", function() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
