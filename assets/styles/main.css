@@ -50,6 +50,28 @@ body{
   
   }
 
+  #boton-arriba {
+    display: none; /* Ocultar el botón por defecto */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  #boton-arriba:hover {
+    background-color: rgb(38, 87, 194);
+  }
+  
+  
+
 @media (max-width: 768px) {
     #container {
       flex-direction: column;

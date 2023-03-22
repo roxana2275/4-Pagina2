@@ -21,7 +21,7 @@ fetch("https://mindhub-xj03.onrender.com/api/amazing")
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">Nombre: ${event.name}</h5>
+                  <h5 class="card-title fw-bold">Nombre: ${event.name}</h5>
                   <p class="card-text">Date: ${event.date}</p>
                   <p class="card-text">Descripcion: ${event.description}</p>
                   <p class="card-text">Category: ${event.category}</p>

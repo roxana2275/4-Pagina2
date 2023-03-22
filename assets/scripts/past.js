@@ -38,12 +38,12 @@ fetch("https://mindhub-xj03.onrender.com/api/amazing")
       let checkbox = "";
 
       for (let i = 0; i < arrayDatos.length; i++) {
-        checkbox += `<div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="" id="${opciones[i]}">
-          <label class="form-check-label" for="${opciones[i]}">
-            ${opciones[i]}
-          </label>
-        </div>`;
+        checkbox += `<div class="form-check-inline form-switch fs-4">
+        <input class="form-check-input" type="checkbox" value="" id="${opciones[i]}">
+        <label class="form-check-label" for="${opciones[i]}">
+          ${opciones[i]}
+        </label>
+      </div>`;
       }
 
       return checkbox;
@@ -57,7 +57,7 @@ fetch("https://mindhub-xj03.onrender.com/api/amazing")
             <img src="${eventPast.image}" id="img-card" alt="${eventPast.description}">
         </div>
         <div class="card-header ">
-            <h5 class="card-title">Name: ${eventPast.name}</h5>
+            <h5 class="card-title fw-bold">Name: ${eventPast.name}</h5>
         </div>
         <div class="card-body">
             <p class="card-text">Description: ${eventPast.description}</p>
@@ -95,7 +95,7 @@ fetch("https://mindhub-xj03.onrender.com/api/amazing")
             <img src="${evento.image}" id="img-card" alt="${evento.description}">
         </div>
         <div class="card-header ">
-            <h5 class="card-title">Name: ${evento.name}</h5>
+            <h5 class="card-title fw-bold">Name: ${evento.name}</h5>
         </div>
         <div class="card-body">
             <p class="card-text">Description: ${evento.description}</p>
@@ -144,7 +144,7 @@ fetch("https://mindhub-xj03.onrender.com/api/amazing")
             <img src="${evento.image}" id="img-card" alt="${evento.description}">
         </div>
         <div class="card-header">
-            <h5 class="card-title">Name: ${evento.name}</h5>
+            <h5 class="card-title fw-bold">Name: ${evento.name}</h5>
         </div>
         <div class="card-body">
             <p class="card-text">Description: ${evento.description}</p>
@@ -166,3 +166,18 @@ fetch("https://mindhub-xj03.onrender.com/api/amazing")
   function seeDetail(id) {
     window.location.href = `./details.html?id=${id}`;
   }
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("boton-arriba").style.display = "block";
+    } else {
+      document.getElementById("boton-arriba").style.display = "none";
+    }
+  }
+  
+  document.getElementById("boton-arriba").addEventListener("click", function() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+  

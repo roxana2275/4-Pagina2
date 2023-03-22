@@ -148,3 +148,17 @@ fetch("https://mindhub-xj03.onrender.com/api/amazing")
     }
   })
   .catch((error) => console.error(error));
+  window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("boton-arriba").style.display = "block";
+  } else {
+    document.getElementById("boton-arriba").style.display = "none";
+  }
+}
+
+document.getElementById("boton-arriba").addEventListener("click", function() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
